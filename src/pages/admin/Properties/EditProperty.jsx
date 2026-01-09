@@ -57,25 +57,6 @@ function EditProperty() {
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleNewImageUpload = async (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-
-    const formData = new FormData();
-    formData.append("image", file);
-
-    const uploadRes = await fetch(
-      "http://home00101-001-site1.ktempurl.com/admin/properties/upload_image.php",
-      { method: "POST", body: formData }
-    );
-
-    const uploadData = await uploadRes.json();
-
-    if (uploadData.status === "success") {
-      setNewImages((prev) => [...prev, uploadData.image_url]);
-    }
-  };
-
   const deleteImage = async (image) => {
     if (!window.confirm("هل أنت متأكد من حذف هذه الصورة؟")) return;
 
