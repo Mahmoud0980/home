@@ -23,7 +23,7 @@ function Home() {
   const fetchAllProperties = async () => {
     try {
       const res = await fetch(
-        "http://home00101-001-site1.ktempurl.com/get_all_properties.php"
+        "https://home00101-001-site1.ktempurl.com/get_all_properties.php"
       );
       const data = await res.json();
 
@@ -99,7 +99,7 @@ function Home() {
                   {...property}
                   image={
                     property.images?.[0]
-                      ? `http://home00101-001-site1.ktempurl.com/${property.images[0]}`
+                      ? `https://home00101-001-site1.ktempurl.com/${property.images[0]}`
                       : ""
                   }
                   isLoggedIn={isLoggedIn}
