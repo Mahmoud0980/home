@@ -43,7 +43,7 @@ function AssignAgent() {
     }
 
     const res = await fetch(
-      "http://localhost/real_estate_api/admin/properties/update_property.php",
+      "http://home00101-001-site1.ktempurl.com/admin/properties/update_property.php",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

@@ -24,7 +24,7 @@ function AddProperty() {
 
   const loadAgents = async () => {
     const res = await fetch(
-      "http://localhost/real_estate_api/admin/get_agents.php"
+      "http://home00101-001-site1.ktempurl.com/admin/get_agents.php"
     );
     const data = await res.json();
     if (data.status === "success") setAgents(data.agents);
@@ -43,7 +43,7 @@ function AddProperty() {
     formData.append("image", file);
 
     const uploadRes = await fetch(
-      "http://localhost/real_estate_api/admin/properties/upload_image.php",
+      "http://home00101-001-site1.ktempurl.com/admin/properties/upload_image.php",
       {
         method: "POST",
         body: formData,
@@ -62,7 +62,7 @@ function AddProperty() {
     e.preventDefault();
 
     const res = await fetch(
-      "http://localhost/real_estate_api/admin/properties/add_property.php",
+      "http://home00101-001-site1.ktempurl.com/admin/properties/add_property.php",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -255,6 +255,7 @@ function AddProperty() {
                 key={i}
                 src={`http://home00101-001-site1.ktempurl.com/${img}`}
                 style={previewImage}
+                alt="test"
               />
             ))}
           </div>
