@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { isAdmin } from "../../../utils/auth";
 
@@ -6,25 +6,34 @@ function EditAgent() {
   const { id } = useParams();
   const navigate = useNavigate();
 
+  // ✅ وحّد اسم الحقل مع اللي بتستخدمه في الـ input
   const [form, setForm] = useState({
-    name: "",
+    NAME: "",
     location: "",
     phone: "",
     rating: "",
   });
 
-  useEffect(() => {
-    if (!isAdmin()) navigate("/login");
-    loadAgent();
-  }, [navigate]);
+  // ✅ useCallback حتى eslint يرضى ونضمن deps صح
+  const loadAgent = useCallback(async () => {
+    try {
+      const res = await fetch(
+        `http://home00101-001-site1.ktempurl.com/admin/get_single_agent.php?id=${id}`
+      );
+      const data = await res.json();
+      if (data.status === "success") setForm(data.agent);
+    } catch (err) {
+      console.error("Failed to load agent:", err);
+    }
+  }, [id]);
 
-  const loadAgent = async () => {
-    const res = await fetch(
-      `http://home00101-001-site1.ktempurl.com/admin/get_single_agent.php?id=${id}`
-    );
-    const data = await res.json();
-    if (data.status === "success") setForm(data.agent);
-  };
+  useEffect(() => {
+    if (!isAdmin()) {
+      navigate("/login");
+      return;
+    }
+    loadAgent();
+  }, [navigate, loadAgent]);
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });

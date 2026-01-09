@@ -48,9 +48,9 @@ export default function Sale() {
 
       <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
         {properties.map((property, i) => {
-          const whatsappLink = property.agent_phone
-            ? `https://wa.me/${property.agent_phone}`
-            : null;
+          // const whatsappLink = property.agent_phone
+          //   ? `https://wa.me/${property.agent_phone}`
+          //   : null;
 
           return (
             <motion.div

@@ -16,7 +16,6 @@ import MortgageProperties from "./pages/MortgageProperties";
 import Agents from "./pages/Agents";
 import Sale from "./pages/Sale";
 import ContactAgent from "./pages/ContactAgent";
-import PropertyList from "./components/PropertyList";
 
 // Admin Pages
 import AdminDashboard from "./pages/admin/AdminDashboard";

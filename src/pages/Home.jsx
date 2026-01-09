@@ -1,19 +1,17 @@
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+
 import { useRef, useState, useEffect } from "react";
 import PropertyCard from "../components/PropertyCard";
 import Header from "../components/Header";
 import PropertyList from "../components/PropertyList";
 
 function Home() {
-  const navigate = useNavigate();
   const isLoggedIn = true;
 
   const propertiesRef = useRef(null);
 
   const [allProperties, setAllProperties] = useState([]);
   const [randomProperties, setRandomProperties] = useState([]);
-  const [selectedProperty, setSelectedProperty] = useState(null);
 
   const [filters, setFilters] = useState({
     location: "",
@@ -44,12 +42,6 @@ function Home() {
   useEffect(() => {
     fetchAllProperties();
   }, []);
-
-  const scrollToProperties = () =>
-    propertiesRef.current.scrollIntoView({ behavior: "smooth" });
-
-  const openModal = (property) => setSelectedProperty(property);
-  const closeModal = () => setSelectedProperty(null);
 
   // ⭐ فلترة العقارات
   const filteredProperties = allProperties.filter((p) => {
@@ -111,7 +103,6 @@ function Home() {
                       : ""
                   }
                   isLoggedIn={isLoggedIn}
-                  onViewDetails={() => openModal(property)}
                 />
               </motion.div>
             ))}

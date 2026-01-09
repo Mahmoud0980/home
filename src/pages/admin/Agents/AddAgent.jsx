@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { isAdmin } from "../../../utils/auth";
 
 function AddAgent() {
   const navigate = useNavigate();
