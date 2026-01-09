@@ -10,7 +10,7 @@ export default function Sale() {
   const fetchProperties = async () => {
     try {
       const res = await fetch(
-        "http://home00101-001-site1.ktempurl.com/get_properties_by_status.php?status=بيع"
+        "https://home00101-001-site1.ktempurl.com/get_properties_by_status.php?status=بيع"
       );
       const data = await res.json();
 
@@ -49,7 +49,7 @@ export default function Sale() {
       <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
         {properties.map((property, i) => {
           // const whatsappLink = property.agent_phone
-          //   ? `https://wa.me/${property.agent_phone}`
+          //   ? `httpss://wa.me/${property.agent_phone}`
           //   : null;
 
           return (

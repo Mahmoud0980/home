@@ -5,7 +5,7 @@ function Contact() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://home00101-001-site1.ktempurl.com/admin/get_contact.php")
+    fetch("https://home00101-001-site1.ktempurl.com/admin/get_contact.php")
       .then((res) => res.json())
       .then((data) => {
         if (data.status === "success") {

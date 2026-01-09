@@ -13,7 +13,7 @@ function ListAgents() {
 
   const fetchAgents = async () => {
     const res = await fetch(
-      "http://home00101-001-site1.ktempurl.com/admin/get_agents.php"
+      "https://home00101-001-site1.ktempurl.com/admin/get_agents.php"
     );
     const data = await res.json();
     if (data.status === "success") setAgents(data.agents);
@@ -23,7 +23,7 @@ function ListAgents() {
     if (!window.confirm("هل تريد حذف الوكيل؟")) return;
 
     await fetch(
-      `http://home00101-001-site1.ktempurl.com/admin/delete_agent.php?id=${id}`
+      `https://home00101-001-site1.ktempurl.com/admin/delete_agent.php?id=${id}`
     );
 
     fetchAgents();

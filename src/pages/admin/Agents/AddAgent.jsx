@@ -18,7 +18,7 @@ function AddAgent() {
     e.preventDefault();
 
     const res = await fetch(
-      "http://home00101-001-site1.ktempurl.com/admin/add_agent.php",
+      "https://home00101-001-site1.ktempurl.com/admin/add_agent.php",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

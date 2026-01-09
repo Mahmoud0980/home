@@ -10,7 +10,7 @@ export default function Agents() {
   const fetchAgents = async () => {
     try {
       const res = await fetch(
-        "http://home00101-001-site1.ktempurl.com/get_agents.php"
+        "https://home00101-001-site1.ktempurl.com/get_agents.php"
       );
       const data = await res.json();
 

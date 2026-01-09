@@ -22,7 +22,7 @@ function EditProperty() {
 
   const loadAgents = useCallback(async () => {
     const res = await fetch(
-      "http://home00101-001-site1.ktempurl.com/admin/get_agents.php"
+      "https://home00101-001-site1.ktempurl.com/admin/get_agents.php"
     );
     const data = await res.json();
     if (data.status === "success") setAgents(data.agents);
@@ -61,7 +61,7 @@ function EditProperty() {
     if (!window.confirm("هل أنت متأكد من حذف هذه الصورة؟")) return;
 
     await fetch(
-      "http://home00101-001-site1.ktempurl.com/admin/properties/delete_property_image.php",
+      "https://home00101-001-site1.ktempurl.com/admin/properties/delete_property_image.php",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -80,7 +80,7 @@ function EditProperty() {
 
     for (let img of newImages) {
       await fetch(
-        "http://home00101-001-site1.ktempurl.com/admin/properties/add_property_image.php",
+        "https://home00101-001-site1.ktempurl.com/admin/properties/add_property_image.php",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -144,7 +144,7 @@ function EditProperty() {
           {images.map((img) => (
             <div key={img.id}>
               <img
-                src={`http://home00101-001-site1.ktempurl.com/${img.image_url}`}
+                src={`https://home00101-001-site1.ktempurl.com/${img.image_url}`}
                 alt="property"
               />
               <button type="button" onClick={() => deleteImage(img)}>

@@ -14,7 +14,7 @@ function ContactSettings() {
   const fetchData = async () => {
     try {
       const res = await fetch(
-        "http://localhost/real_estate_api/admin/get_contact.php"
+        "https://localhost/real_estate_api/admin/get_contact.php"
       );
       const data = await res.json();
 
@@ -47,7 +47,7 @@ function ContactSettings() {
 
     try {
       const res = await fetch(
-        "http://home00101-001-site1.ktempurl.com/admin/update_contact.php",
+        "https://home00101-001-site1.ktempurl.com/admin/update_contact.php",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

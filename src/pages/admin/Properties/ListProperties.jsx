@@ -13,7 +13,7 @@ function ListProperties() {
 
   const fetchData = async () => {
     const res = await fetch(
-      "http://home00101-001-site1.ktempurl.com/admin/properties/get_properties.php"
+      "https://home00101-001-site1.ktempurl.com/admin/properties/get_properties.php"
     );
     const data = await res.json();
     if (data.status === "success") {
@@ -25,7 +25,7 @@ function ListProperties() {
     if (!window.confirm("هل تريد حذف هذا العقار؟")) return;
 
     await fetch(
-      `http://home00101-001-site1.ktempurl.com/admin/properties/delete_property.php?id=${id}`
+      `https://home00101-001-site1.ktempurl.com/admin/properties/delete_property.php?id=${id}`
     );
     fetchData();
   };

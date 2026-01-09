@@ -10,7 +10,7 @@ export default function MortgageProperties() {
   const fetchProperties = async () => {
     try {
       const res = await fetch(
-        "http://home00101-001-site1.ktempurl.com/get_properties_by_status.php?status=رهن"
+        "https://home00101-001-site1.ktempurl.com/get_properties_by_status.php?status=رهن"
       );
       const data = await res.json();
 

@@ -35,7 +35,7 @@ function Login({ setUser }) {
     // 🔐 تسجيل دخول المستخدم العادي
     try {
       const response = await fetch(
-        "http://home00101-001-site1.ktempurl.com/login.php",
+        "https://home00101-001-site1.ktempurl.com/login.php",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

@@ -20,7 +20,7 @@ function AssignAgent() {
 
   const fetchProperties = async () => {
     const res = await fetch(
-      "http://home00101-001-site1.ktempurl.com/admin/properties/get_properties.php"
+      "https://home00101-001-site1.ktempurl.com/admin/properties/get_properties.php"
     );
     const data = await res.json();
     if (data.status === "success") setProperties(data.properties);
@@ -28,7 +28,7 @@ function AssignAgent() {
 
   const fetchAgents = async () => {
     const res = await fetch(
-      "http://localhost/real_estate_api/admin/get_agents.php"
+      "https://home00101-001-site1.ktempurl.com/admin/get_agents.php"
     );
     const data = await res.json();
     if (data.status === "success") setAgents(data.agents);
@@ -43,7 +43,7 @@ function AssignAgent() {
     }
 
     const res = await fetch(
-      "http://home00101-001-site1.ktempurl.com/admin/properties/update_property.php",
+      "https://home00101-001-site1.ktempurl.com/admin/properties/update_property.php",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

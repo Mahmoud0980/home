@@ -25,7 +25,7 @@ function Register() {
 
     try {
       const res = await fetch(
-        "http://home00101-001-site1.ktempurl.com/register.php",
+        "https://home00101-001-site1.ktempurl.com/register.php",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

@@ -18,7 +18,7 @@ function EditAgent() {
   const loadAgent = useCallback(async () => {
     try {
       const res = await fetch(
-        `http://home00101-001-site1.ktempurl.com/admin/get_single_agent.php?id=${id}`
+        `https://home00101-001-site1.ktempurl.com/admin/get_single_agent.php?id=${id}`
       );
       const data = await res.json();
       if (data.status === "success") setForm(data.agent);
@@ -42,7 +42,7 @@ function EditAgent() {
     e.preventDefault();
 
     const res = await fetch(
-      "http://home00101-001-site1.ktempurl.com/admin/update_agent.php",
+      "https://home00101-001-site1.ktempurl.com/admin/update_agent.php",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
