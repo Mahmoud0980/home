@@ -18,7 +18,7 @@ function EditProperty() {
   });
 
   const [images, setImages] = useState([]);
-  const [newImages, setNewImages] = useState([]);
+  const [newImages] = useState([]);
 
   const loadAgents = useCallback(async () => {
     const res = await fetch(
