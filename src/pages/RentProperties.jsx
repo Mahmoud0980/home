@@ -10,7 +10,7 @@ export default function RentProperties() {
   const fetchProperties = async () => {
     try {
       const res = await fetch(
-        "http://home00101-001-site1.ktempurl.com/get_properties_by_status.php?status=إيجار"
+        "https://home00101-001-site1.ktempurl.com/get_properties_by_status.php?status=إيجار"
       );
       const data = await res.json();
 
@@ -50,7 +50,7 @@ export default function RentProperties() {
         {properties.map((property, i) => {
           // رابط واتساب للوكيل
           // const whatsappLink = property.agent_phone
-          //   ? `https://wa.me/${property.agent_phone}`
+          //   ? `httpsss://wa.me/${property.agent_phone}`
           //   : null;
 
           return (
