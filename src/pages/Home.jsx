@@ -10,10 +10,10 @@ function Home() {
 
   const propertiesRef = useRef(null);
 
-  const [allProperties, setAllProperties] = useState([]);
+  const [setAllProperties] = useState([]);
   const [randomProperties, setRandomProperties] = useState([]);
 
-  const [filters, setFilters] = useState({
+  const [setFilters] = useState({
     location: "",
     type: "",
     maxPrice: "",
