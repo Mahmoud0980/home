@@ -5,7 +5,7 @@ import PropertyModal from "../components/PropertyModal";
 
 export default function MortgageProperties() {
   const [properties, setProperties] = useState([]);
-  const [loading, setLoading] = useState(true);
+
   const [selectedProperty, setSelectedProperty] = useState(null);
 
   const fetchProperties = async () => {
@@ -18,7 +18,6 @@ export default function MortgageProperties() {
     } catch (err) {
       console.error("خطأ أثناء جلب العقارات:", err);
     }
-    setLoading(false);
   };
 
   useEffect(() => {
