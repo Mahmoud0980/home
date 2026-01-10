@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import PropertyCard from "../components/PropertyCard";
 import Header from "../components/Header";
-import PropertyList from "../components/PropertyList";
+//import PropertyList from "../components/PropertyList";
 
 function Home() {
   const isLoggedIn = true;
@@ -44,21 +44,21 @@ function Home() {
   }, []);
 
   // ⭐ فلترة العقارات
-  const filteredProperties = allProperties.filter((p) => {
-    const matchLocation =
-      filters.location === "" || p.location.includes(filters.location);
+  // const filteredProperties = allProperties.filter((p) => {
+  //   const matchLocation =
+  //     filters.location === "" || p.location.includes(filters.location);
 
-    const matchType =
-      filters.type === "" ||
-      (filters.type === "Sale" && p.STATUS === "بيع") ||
-      (filters.type === "Rent" && p.STATUS === "إيجار");
+  //   const matchType =
+  //     filters.type === "" ||
+  //     (filters.type === "Sale" && p.STATUS === "بيع") ||
+  //     (filters.type === "Rent" && p.STATUS === "إيجار");
 
-    const matchPrice =
-      filters.maxPrice === "" ||
-      parseInt(p.price) <= parseInt(filters.maxPrice) * 1000;
+  //   const matchPrice =
+  //     filters.maxPrice === "" ||
+  //     parseInt(p.price) <= parseInt(filters.maxPrice) * 1000;
 
-    return matchLocation && matchType && matchPrice;
-  });
+  //   return matchLocation && matchType && matchPrice;
+  // });
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-sky-50 via-white to-sky-200">
