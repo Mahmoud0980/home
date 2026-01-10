@@ -1,26 +1,23 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import PropertyCard from "../components/PropertyCard";
+import PropertyModal from "../components/PropertyModal";
 
 export default function Sale() {
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedProperty, setSelectedProperty] = useState(null);
 
-  // جلب العقارات من قاعدة البيانات
   const fetchProperties = async () => {
     try {
       const res = await fetch(
         "https://home00101-001-site1.ktempurl.com/get_properties_by_status.php?status=بيع"
       );
       const data = await res.json();
-
-      if (data.status === "success") {
-        setProperties(data.properties);
-      }
+      if (data.status === "success") setProperties(data.properties);
     } catch (err) {
       console.error("خطأ أثناء جلب البيانات:", err);
     }
-
     setLoading(false);
   };
 
@@ -34,33 +31,37 @@ export default function Sale() {
         🏠 عقارات للبيع
       </h2>
 
-      {loading && (
-        <p className="text-center text-gray-600 text-xl">
-          جاري تحميل البيانات...
-        </p>
-      )}
-
-      {!loading && properties.length === 0 && (
-        <p className="text-center text-gray-600 text-xl">
-          لا يوجد عقارات للبيع حالياً
-        </p>
-      )}
+      {loading && <p className="text-center">جاري التحميل...</p>}
 
       <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
-        {properties.map((property, i) => {
-          const imgPath = property.images?.[0]
-            ? `https://home00101-001-site1.ktempurl.com/${property.images[0]}`
-            : null;
-
-          console.log("FINAL IMAGE URL:", imgPath);
-
-          return (
-            <motion.div key={property.id}>
-              <PropertyCard {...property} image={imgPath} isLoggedIn={true} />
-            </motion.div>
-          );
-        })}
+        {properties.map((property, i) => (
+          <motion.div
+            key={property.id}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: i * 0.1 }}
+          >
+            <PropertyCard
+              {...property}
+              image={
+                property.images?.[0]
+                  ? `https://home00101-001-site1.ktempurl.com/${property.images[0]}`
+                  : null
+              }
+              isLoggedIn={true}
+              onOpen={() => setSelectedProperty(property)}
+            />
+          </motion.div>
+        ))}
       </div>
+
+      {/* ===== MODAL ===== */}
+      {selectedProperty && (
+        <PropertyModal
+          property={selectedProperty}
+          onClose={() => setSelectedProperty(null)}
+        />
+      )}
     </div>
   );
 }
