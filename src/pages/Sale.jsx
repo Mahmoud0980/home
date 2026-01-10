@@ -48,20 +48,15 @@ export default function Sale() {
 
       <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
         {properties.map((property, i) => {
-          // const whatsappLink = property.agent_phone
-          //   ? `httpss://wa.me/${property.agent_phone}`
-          //   : null;
+          const imgPath = property.images?.[0]
+            ? `https://home00101-001-site1.ktempurl.com/${property.images[0]}`
+            : null;
+
+          console.log("FINAL IMAGE URL:", imgPath);
 
           return (
-            <motion.div
-              key={property.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.2 }}
-              className="flex flex-col gap-4"
-            >
-              <PropertyCard {...property} isLoggedIn={true} />
+            <motion.div key={property.id}>
+              <PropertyCard {...property} image={imgPath} isLoggedIn={true} />
             </motion.div>
           );
         })}

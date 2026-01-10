@@ -20,9 +20,11 @@ function ContactAgent() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10 px-4">
-      <div className="max-w-3xl bg-white rounded-2xl p-6 shadow-md w-full">
-        <h2 className="text-3xl font-bold text-blue-700 mb-4">{property.title}</h2>
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center py-10 px-4 ">
+      <div className="max-w-3xl bg-white rounded-2xl p-6 shadow-md w-full mt-8">
+        <h2 className="text-3xl font-bold text-blue-700 mb-4">
+          {property.title}
+        </h2>
         <p className="mb-2">الموقع: {property.location}</p>
         <p className="mb-2">السعر: {property.price} $</p>
         <p className="mb-2">المساحة: {property.area} م²</p>
@@ -36,7 +38,9 @@ function ContactAgent() {
           </ul>
         )}
 
-        <p className="font-semibold text-lg mb-6">رقم الوكيل: {property.agentPhone}</p>
+        <p className="font-semibold text-lg mb-6">
+          رقم الوكيل: {property.agentPhone}
+        </p>
 
         <button
           onClick={() => navigate("/")}

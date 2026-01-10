@@ -66,15 +66,7 @@ function Home() {
       <Header onFilter={setFilters} />
 
       {/* ⭐ العقارات حسب البحث */}
-      <div ref={propertiesRef} className="max-w-7xl mx-auto py-10 px-6">
-        {filteredProperties.length > 0 ? (
-          <PropertyList properties={filteredProperties} />
-        ) : (
-          <p className="text-center text-gray-600 text-lg">
-            لا توجد نتائج مطابقة للبحث 🔍
-          </p>
-        )}
-      </div>
+      <div ref={propertiesRef} className="max-w-7xl mx-auto py-10 px-6"></div>
 
       {/* ⭐ إعلان */}
 
@@ -88,24 +80,29 @@ function Home() {
           <p className="text-center text-gray-600 text-lg">جاري التحميل...</p>
         ) : (
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-            {randomProperties.map((property, index) => (
-              <motion.div
-                key={property.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <PropertyCard
-                  {...property}
-                  image={
-                    property.images?.[0]
-                      ? `https://home00101-001-site1.ktempurl.com/${property.images[0]}`
-                      : ""
-                  }
-                  isLoggedIn={isLoggedIn}
-                />
-              </motion.div>
-            ))}
+            {randomProperties.map((property, index) => {
+              // 👇 اطبع قيمة الصورة الأولى
+              console.log("IMAGE VALUE:", property.images?.[0]);
+
+              return (
+                <motion.div
+                  key={property.id}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                >
+                  <PropertyCard
+                    {...property}
+                    image={
+                      property.images?.[0]
+                        ? `https://home00101-001-site1.ktempurl.com/${property.images[0]}`
+                        : null
+                    }
+                    isLoggedIn={isLoggedIn}
+                  />
+                </motion.div>
+              );
+            })}
           </div>
         )}
       </div>

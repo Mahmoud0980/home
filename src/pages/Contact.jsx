@@ -20,7 +20,7 @@ function Contact() {
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-cyan-50 py-12 px-6">
       {/* العنوان */}
       <header className="text-center mb-12">
-        <h1 className="text-5xl font-extrabold text-blue-700 mb-4 drop-shadow-lg">
+        <h1 className="text-5xl font-extrabold text-blue-700 mb-4 drop-shadow-lg mt-8">
           تواصل معنا
         </h1>
         <p className="text-gray-700 text-lg max-w-2xl mx-auto">

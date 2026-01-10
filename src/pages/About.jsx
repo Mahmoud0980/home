@@ -1,16 +1,16 @@
-
 import React from "react";
 
 function About() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-sky-100 py-12 px-6">
       {/* العنوان الرئيسي */}
-      <header className="text-center mb-12">
+      <header className="text-center mb-12 mt-6">
         <h1 className="text-5xl font-extrabold text-blue-700 mb-4 drop-shadow-lg">
           من نحن
         </h1>
         <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-          سيما للعقارات تهدف لتقديم أفضل تجربة في شراء وتأجير العقارات في سوريا. نحن ملتزمون بالشفافية، الجودة، وخدمة العملاء الممتازة.
+          سيما للعقارات تهدف لتقديم أفضل تجربة في شراء وتأجير العقارات في سوريا.
+          نحن ملتزمون بالشفافية، الجودة، وخدمة العملاء الممتازة.
         </p>
       </header>
 
@@ -23,7 +23,9 @@ function About() {
           </p>
         </div>
         <div className="bg-white p-6 rounded-2xl shadow-lg hover:scale-105 transform transition duration-300">
-          <h3 className="text-2xl font-bold text-blue-600 mb-2">عقارات متنوعة</h3>
+          <h3 className="text-2xl font-bold text-blue-600 mb-2">
+            عقارات متنوعة
+          </h3>
           <p className="text-gray-600">
             نقدم خيارات متنوعة تناسب جميع الميزانيات والاحتياجات.
           </p>
@@ -65,4 +67,3 @@ function About() {
 }
 
 export default About;
-

@@ -21,7 +21,7 @@ function PricePredictor({ isLoggedIn }) {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-cyan-50 py-12 px-6">
       <header className="text-center mb-12">
-        <h1 className="text-5xl font-extrabold text-blue-700 mb-4 drop-shadow-lg">
+        <h1 className="text-5xl font-extrabold text-blue-700 mb-4 drop-shadow-lg mt-7">
           توقع أسعار العقارات
         </h1>
         <p className="text-gray-700 text-lg max-w-2xl mx-auto">
@@ -32,7 +32,9 @@ function PricePredictor({ isLoggedIn }) {
       <div className="max-w-3xl mx-auto bg-white p-8 rounded-3xl shadow-xl">
         <form onSubmit={handlePredict} className="space-y-6">
           <div>
-            <label className="block mb-2 font-semibold text-gray-700">الموقع</label>
+            <label className="block mb-2 font-semibold text-gray-700">
+              الموقع
+            </label>
             <input
               type="text"
               value={location}
@@ -44,7 +46,9 @@ function PricePredictor({ isLoggedIn }) {
           </div>
 
           <div>
-            <label className="block mb-2 font-semibold text-gray-700">المساحة (م²)</label>
+            <label className="block mb-2 font-semibold text-gray-700">
+              المساحة (م²)
+            </label>
             <input
               type="number"
               value={area}
@@ -56,7 +60,9 @@ function PricePredictor({ isLoggedIn }) {
           </div>
 
           <div>
-            <label className="block mb-2 font-semibold text-gray-700">نوع الطابو</label>
+            <label className="block mb-2 font-semibold text-gray-700">
+              نوع الطابو
+            </label>
             <select
               value={landType}
               onChange={(e) => setLandType(e.target.value)}
