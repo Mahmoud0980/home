@@ -47,27 +47,26 @@ export default function RentProperties() {
       )}
 
       <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
-        {properties.map((property, i) => {
-          // رابط واتساب للوكيل
-          // const whatsappLink = property.agent_phone
-          //   ? `httpsss://wa.me/${property.agent_phone}`
-          //   : null;
-
-          return (
-            <motion.div
-              key={property.id}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.2 }}
-              className="flex flex-col gap-4"
-            >
-              <PropertyCard {...property} isLoggedIn={true} />
-
-              {/* زر التحدث مع الوكيل */}
-            </motion.div>
-          );
-        })}
+        {properties.map((property, i) => (
+          <motion.div
+            key={property.id}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: i * 0.2 }}
+            className="flex flex-col gap-4"
+          >
+            <PropertyCard
+              {...property}
+              image={
+                property.images?.[0]
+                  ? `https://home00101-001-site1.ktempurl.com/${property.images[0]}`
+                  : null
+              }
+              isLoggedIn={true}
+            />
+          </motion.div>
+        ))}
       </div>
     </div>
   );

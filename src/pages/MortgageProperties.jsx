@@ -55,7 +55,15 @@ export default function MortgageProperties() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: i * 0.2 }}
           >
-            <PropertyCard {...property} isLoggedIn={true} />
+            <PropertyCard
+              {...property}
+              image={
+                property.images?.[0]
+                  ? `https://home00101-001-site1.ktempurl.com/${property.images[0]}`
+                  : null
+              }
+              isLoggedIn={true}
+            />
           </motion.div>
         ))}
       </div>
