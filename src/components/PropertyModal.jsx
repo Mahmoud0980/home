@@ -33,6 +33,7 @@ export default function PropertyModal({ property, onClose }) {
                 key={i}
                 src={`https://home00101-001-site1.ktempurl.com/${img}`}
                 className="h-40 rounded-lg object-cover"
+                alt="Property"
               />
             ))}
           </div>
